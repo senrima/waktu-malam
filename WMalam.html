@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAKTU MALAM - Inovasi Tanpa Batas Saat Dunia Terlelap</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Three.js for 3D Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000010; /* Warna dasar biru sangat gelap, seperti langit malam */
+            color: #E0E0E0;
+        }
+        /* Gradient untuk teks */
+        .text-gradient {
+            background-image: linear-gradient(90deg, #A78BFA, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Custom class untuk section dengan latar belakang aurora */
+        .section-bg-dark {
+            background-color: #050515;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-bg-dark::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(167, 139, 250, 0.15) 0%, transparent 40%);
+            animation: rotate-glow 20s linear infinite;
+        }
+        @keyframes rotate-glow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        /* Animasi saat elemen di-scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom card style */
+        .custom-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+            <canvas id="star-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="text-3xl font-bold text-white flex items-center justify-center gap-2 mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    WAKTU MALAM
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Saat Dunia Terlelap, <span class="text-gradient">Inovasi Kami Terjaga.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    WAKTU MALAM adalah tempat di mana AI, otomatisasi, dan teknologi canggih lahir untuk mendefinisikan ulang masa depan bisnis Anda.
+                </p>
+                <a href="https://www.google.com" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105">
+                    Mulai Proyek Anda
+                </a>
+            </div>
+        </section>
+
+        <!-- Solusi Section -->
+        <section id="solusi" class="py-24 section-bg-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Solusi Berbasis Teknologi Malam Hari</h2>
+                    <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Kami tidak tidur. Kami merancang, membangun, dan mengotomatisasi solusi kompleks untuk Anda.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="custom-card p-8 rounded-2xl reveal"><div class="mb-6"><i data-feather="cpu" class="w-12 h-12 text-blue-400"></i></div><h3 class="text-2xl font-bold text-white mb-3">Intelligent AI</h3><p class="text-gray-400">Model AI prediktif dan generatif yang belajar dan beradaptasi, memberikan wawasan yang belum pernah ada sebelumnya.</p></div>
+                    <div class="custom-card p-8 rounded-2xl reveal" style="transition-delay: 200ms;"><div class="mb-6"><i data-feather="zap" class="w-12 h-12 text-blue-400"></i></div><h3 class="text-2xl font-bold text-white mb-3">Hyper-Automation</h3><p class="text-gray-400">Mengotomatiskan proses bisnis dari hulu ke hilir, membebaskan waktu tim Anda untuk fokus pada inovasi.</p></div>
+                    <div class="custom-card p-8 rounded-2xl reveal" style="transition-delay: 400ms;"><div class="mb-6"><i data-feather="layers" class="w-12 h-12 text-blue-400"></i></div><h3 class="text-2xl font-bold text-white mb-3">Platform Kustom</h3><p class="text-gray-400">Membangun ekosistem teknologi yang skalabel dan aman, dirancang khusus untuk kebutuhan unik perusahaan Anda.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Proyek Unggulan Section -->
+        <section id="proyek" class="py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Karya dari Kegelapan</h2>
+                    <p class="text-gray-400 mt-2">Contoh bagaimana inovasi kami bersinar paling terang di malam hari.</p>
+                </div>
+                <div class="space-y-20">
+                    <div class="flex flex-col md:flex-row items-center gap-12 reveal"><div class="md:w-1/2"><img src="https://placehold.co/600x400/050515/A78BFA?text=Proyek+Automasi+Logistik" class="rounded-xl shadow-lg w-full" alt="[Gambar Proyek Automasi Logistik]"></div><div class="md:w-1/2"><span class="text-blue-400 font-semibold">Studi Kasus 1</span><h3 class="text-3xl font-bold text-white mt-2 mb-4">Otomatisasi Rantai Pasok Cerdas</h3><p class="text-gray-400">Mengimplementasikan sistem AI untuk memprediksi permintaan dan mengotomatiskan 95% proses gudang untuk klien logistik terkemuka, mengurangi biaya operasional sebesar 30%.</p></div></div>
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-12 reveal"><div class="md:w-1/2"><img src="https://placehold.co/600x400/050515/3B82F6?text=Proyek+Analitik+AI" class="rounded-xl shadow-lg w-full" alt="[Gambar Proyek Analitik AI]"></div><div class="md:w-1/2"><span class="text-purple-400 font-semibold">Studi Kasus 2</span><h3 class="text-3xl font-bold text-white mt-2 mb-4">Platform Analitik Sentimen Pelanggan</h3><p class="text-gray-400">Membangun platform NLP real-time yang menganalisis jutaan ulasan online, memberikan perusahaan e-commerce wawasan untuk meningkatkan kepuasan pelanggan hingga 25%.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Kami Section -->
+        <section id="tentang" class="py-24 section-bg-dark">
+             <div class="container mx-auto px-6 text-center max-w-4xl reveal">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">Kami adalah Para Inovator Nokturnal</h2>
+                 <p class="text-lg text-gray-300 mt-4">Di WAKTU MALAM, kami percaya bahwa ide-ide terbaik tidak mengenal waktu. Tim kami terdiri dari para ahli strategi, insinyur, dan desainer yang bersemangat mengubah kompleksitas menjadi solusi elegan di bawah cahaya rembulan. Misi kami sederhana: Memberikan keunggulan kompetitif melalui teknologi saat pesaing Anda sedang beristirahat.</p>
+            </div>
+        </section>
+        
+        <!-- Testimoni Section -->
+        <section id="testimoni" class="py-24">
+            <div class="container mx-auto px-6 reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Suara Mereka yang Percaya pada Malam</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="custom-card p-8 rounded-2xl"><p class="text-gray-300 italic">"WAKTU MALAM benar-benar mengubah cara kami melihat data. Proses mereka yang cepat dan di luar jam kerja memberikan hasil sebelum kami memulai hari."</p><div class="mt-4"><p class="font-bold text-white">Andi Wijaya</p><p class="text-sm text-purple-400">CEO, Logistik Jaya</p></div></div>
+                    <div class="custom-card p-8 rounded-2xl"><p class="text-gray-300 italic">"Tim yang luar biasa. Platform otomatisasi yang mereka bangun menghemat ribuan jam kerja bagi kami. Sangat direkomendasikan."</p><div class="mt-4"><p class="font-bold text-white">Siti Hartono</p><p class="text-sm text-purple-400">COO, Ritel Makmur</p></div></div>
+                    <div class="custom-card p-8 rounded-2xl"><p class="text-gray-300 italic">"Inovasi mereka dalam AI generatif membuka pasar baru bagi kami. Mereka bekerja saat kami tidur, dan itu adalah keajaiban."</p><div class="mt-4"><p class="font-bold text-white">Budi Santoso</p><p class="text-sm text-purple-400">VP of Product, Kreasi Digital</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="kontak" class="py-24 text-center section-bg-dark">
+            <div class="container mx-auto px-6 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white">Punya Ide Brilian di Tengah Malam?</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-4 mb-8">Jangan biarkan ide itu menguap. Tim kami siap 24/7 untuk mendiskusikannya. Mari wujudkan inovasi Anda.</p>
+                <a href="https://www.google.com" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-bold py-4 px-10 rounded-full text-xl transition-all transform hover:scale-105 inline-block">
+                    Hubungi Kami Sekarang
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 WAKTU MALAM. Semua Hak Cipta Dilindungi. Inovasi tidak pernah tidur.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi Feather Icons
+        feather.replace();
+
+        // Three.js Starfield Animation
+        const canvas = document.getElementById('star-canvas');
+        if (canvas) {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            const starsGeometry = new THREE.BufferGeometry();
+            const starsCount = 5000;
+            const posArray = new Float32Array(starsCount * 3);
+            for(let i=0; i < starsCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 2000;
+            }
+            starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const starsMaterial = new THREE.PointsMaterial({ size: 0.7, color: 0xffffff });
+            const starField = new THREE.Points(starsGeometry, starsMaterial);
+            scene.add(starField);
+
+            camera.position.z = 5;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                starField.rotation.x += 0.0001;
+                starField.rotation.y += 0.0001;
+                renderer.render(scene, camera);
+            };
+            animate();
+
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            });
+        }
+        
+        // Animasi on-scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+    </script>
+</body>
+</html>
