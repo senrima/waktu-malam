@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Maker - Ubah Ide Jadi Video Sinematik</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Menggunakan font Inter sebagai default */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* slate-950 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #67e8f9, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-button {
+            box-shadow: 0 0 15px rgba(103, 232, 249, 0.4), 0 0 30px rgba(167, 139, 250, 0.3);
+        }
+        .pricing-card-popular {
+            border-color: #67e8f9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <!-- Header -->
+    <header class="bg-slate-900/50 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">
+                Prompt Maker
+            </div>
+            <!-- FIXED: Header Countdown visible on all screens -->
+            <div class="flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/30 px-3 py-2 rounded-lg">
+                <span class="hidden sm:inline text-sm font-semibold text-cyan-300">Penawaran Berakhir:</span>
+                <span id="header-countdown" class="text-sm font-bold text-white tracking-wider">24:00:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-20 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                Ubah Ide Liar Jadi Video Sinematik, <span class="gradient-text">Tanpa Pusing.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+                Prompt Maker membantu Anda menciptakan prompt video yang sempurna untuk AI, hanya dengan beberapa klik. Lupakan kebingungan, fokus pada kreativitas.
+            </p>
+            <a href="https://www.google.com" target="_blank" class="inline-block bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold text-lg px-8 py-4 rounded-xl hover:scale-105 transition-transform glow-button">
+                Lihat Paket Harga
+            </a>
+        </div>
+    </main>
+    
+    <!-- NEW: Prompt to Masterpiece Section -->
+    <section id="demo" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Dari Teks Sederhana Menjadi Karya Nyata</h2>
+                <p class="text-slate-400 mt-2 max-w-2xl mx-auto">Lihat bagaimana Prompt Maker mengubah deskripsi teks menjadi adegan video yang menakjubkan.</p>
+            </div>
+            <div class="max-w-6xl mx-auto p-4 md:p-8 bg-slate-900/50 border border-slate-700 rounded-2xl shadow-2xl shadow-black/50">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <!-- Left Side: Prompt -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3">1. Contoh Prompt</h3>
+                        <div id="prompt-container" class="relative bg-black/50 p-4 rounded-lg border border-slate-600 font-mono text-xs text-slate-300 h-80 overflow-y-auto">
+                            <button id="copy-button" class="absolute top-2 right-2 bg-slate-700 text-white px-3 py-1 rounded-md text-xs font-semibold hover:bg-cyan-500 transition-colors z-10">Salin</button>
+                            <pre id="prompt-text" class="whitespace-pre-wrap">Primary Video Purpose: Film Teaser / Trailer
+Aspect Ratio: 16:9 (Horizontal)
+Visual Style: Realistic, with a dark (gritty) cinematic feel
+Lighting: Dramatic lighting from city neon lights at night
+Background/Setting: Narrow alley between tall buildings, wet asphalt reflecting neon light
+
+Storyline/Sequence of Scenes:
+1. (0-2 seconds) Eye Level angle on the Protagonist character (child). He stands alone, staring at a puddle on the ground with a curious expression.
+2. (2-4 seconds) The camera performs a very slow motion movement. From the reflection in the puddle, we see the silhouette of the Antagonist (teenager) slowly appearing behind the child.
+3. (4-5 seconds) Extreme close-up on the Protagonist's eyes widening in surprise as he realizes the Antagonist's presence. At this exact moment, lightning strikes in the sky, briefly illuminating his face.
+
+Dialog: No dialog.
+Narasi / Voice-over (Bahasa Indonesia): "Dia di sini."
+Audio Elements: Background Music - Emotional and suspenseful</pre>
+                        </div>
+                        <div id="copy-notification" class="mt-2 text-center text-green-400 font-semibold opacity-0 transition-opacity duration-300">Prompt disalin!</div>
+                    </div>
+
+                    <!-- Right Side: Result -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3">2. Video Yang Dihasilkan</h3>
+                        <div class="aspect-video bg-black rounded-lg border border-slate-600 overflow-hidden shadow-inner">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/EFRZL5AuxyU?autoplay=1&mute=1&loop=1&playlist=EFRZL5AuxyU&controls=0" title="Contoh Video yang Dihasilkan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Dipercaya oleh Ratusan Kreator</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <p class="text-slate-300 italic mb-6">"Gila, ini beneran game-changer! Dulu bisa berjam-jam mikirin prompt, sekarang tinggal klik-klik aja. Waktu produksi jadi lebih cepat, klien pun senang."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/a78bfa/FFFFFF?text=A" alt="Avatar Andi Pratama" class="w-12 h-12 rounded-full mr-4 border-2 border-purple-400">
+                        <div>
+                            <p class="font-bold text-white">Andi Pratama</p>
+                            <p class="text-sm text-slate-400">Video Editor Freelance</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <p class="text-slate-300 italic mb-6">"Sebagai content creator, Prompt Maker bantu banget buat eksplorasi ide-ide visual baru. Hasil videonya jadi lebih sinematik dan 'mahal'. Recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/67e8f9/0f172a?text=C" alt="Avatar Citra Lestari" class="w-12 h-12 rounded-full mr-4 border-2 border-cyan-400">
+                        <div>
+                            <p class="font-bold text-white">Citra Lestari</p>
+                            <p class="text-sm text-slate-400">Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <p class="text-slate-300 italic mb-6">"Awalnya skeptis, tapi setelah coba paket gratisnya langsung upgrade. Fitur kustomisasinya luar biasa detail. Sangat membantu tim kami di agensi."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/f472b6/FFFFFF?text=B" alt="Avatar Budi Santoso" class="w-12 h-12 rounded-full mr-4 border-2 border-pink-400">
+                        <div>
+                            <p class="font-bold text-white">Budi Santoso</p>
+                            <p class="text-sm text-slate-400">Creative Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="harga" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Investasi Terbaik untuk Kreativitas Anda</h2>
+                <p class="text-slate-400 mt-2">Pilih paket yang sesuai dengan kebutuhan Anda. Tanpa biaya tersembunyi.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-gradient-to-r from-cyan-500 to-purple-600 p-4 rounded-xl text-center mb-10 shadow-lg">
+                <p class="font-bold text-white text-lg">🔥 PENAWARAN TERBATAS! Diskon 80% untuk semua paket pembelian sekali bayar. Berakhir dalam <span id="countdown">24:00:00</span></p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-8 items-center">
+                
+                <!-- Pricing Card 1: Suka Suka -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transition-transform hover:scale-105 h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-white">Paket Suka Suka</h3>
+                    <p class="text-slate-400 mt-2 mb-6">Untuk Anda yang mau coba-coba.</p>
+                    <div class="flex justify-center items-center h-[76px] mb-6">
+                        <p class="text-5xl font-extrabold text-white">GRATIS</p>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Akses ke Semua Opsi Dasar</span></li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Memasukkan API Gemini Setiap Sesi</span></li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Terdapat Waktu Sesi Membuka Aplikasi</span></li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Hasilkan 5 Prompt per hari</span></li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Terdapat Iklan</span></li>
+                    </ul>
+                    <a href="https://www.google.com" target="_blank" class="w-full block text-center bg-slate-700 text-white font-semibold py-3 rounded-lg hover:bg-slate-600 transition-colors">
+                        Coba Gratis Sekarang
+                    </a>
+                </div>
+
+                <!-- Pricing Card 2: Santai (Popular) -->
+                <div class="bg-slate-800 p-8 rounded-2xl border-2 transition-transform h-full pricing-card-popular relative flex flex-col">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-400 text-slate-900 text-sm font-bold px-4 py-1 rounded-full">PALING POPULER</span>
+                    <h3 class="text-2xl font-bold text-white">Paket Santai</h3>
+                    <p class="text-cyan-300 mt-2 mb-6">Penawaran terbaik untuk satu kali pembelian.</p>
+                    <div class="mb-2">
+                        <div class="flex justify-center items-baseline">
+                            <span class="text-3xl font-bold text-white mr-1">Rp</span>
+                            <span class="text-5xl md:text-6xl font-extrabold text-white tracking-tighter">99.000</span>
+                        </div>
+                        <p class="text-lg font-medium text-slate-500 h-7"><s>Rp 599.000</s></p>
+                    </div>
+                    <p class="text-slate-500 mb-6 font-bold">Satu Kali Pembelian</p>
+                    <ul class="space-y-4 text-slate-300 mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Semua di Paket Suka Suka</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Tanpa Sesi Waktu Membuka Aplikasi</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Hasilkan Prompt Tanpa Batas</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Masukkan API Gemini Sekali</span></li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Bebas Iklan</span></li>
+                    </ul>
+                    <a href="https://www.google.com" target="_blank" class="w-full block text-center bg-cyan-500 text-white font-semibold py-3 rounded-lg hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/30">
+                        Amankan Diskon 80%
+                    </a>
+                </div>
+
+                <!-- Pricing Card 3: Tidak Mau Repot -->
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 transition-transform hover:scale-105 h-full flex flex-col">
+                    <h3 class="text-2xl font-bold text-white">Paket Tidak Mau Repot</h3>
+                    <p class="text-slate-400 mt-2 mb-6">Untuk profesional dan agensi.</p>
+                     <div class="mb-2">
+                        <div class="flex justify-center items-baseline">
+                            <span class="text-3xl font-bold text-white mr-1">Rp</span>
+                            <span class="text-5xl md:text-6xl font-extrabold text-white tracking-tighter">149.000</span>
+                        </div>
+                        <p class="text-lg font-medium text-slate-500 h-7"><s>Rp 699.000</s></p>
+                    </div>
+                    <p class="text-slate-500 mb-6 font-bold">Satu Kali Pembelian</p>
+                    <ul class="space-y-4 text-slate-300 mb-8 flex-grow">
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Semua di Paket Santai</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Dukungan Prioritas</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Simpan Karakter Unit Anda</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Bonus Menarik</span></li>
+                        <li class="flex items-start font-bold"><span class="text-cyan-400 mr-3 mt-1 flex-shrink-0">✔</span><span>Akses Aplikasi Beta Lebih Awal</span></li>
+                    </ul>
+                    <a href="https://www.google.com" target="_blank" class="w-full block text-center bg-slate-700 text-white font-semibold py-3 rounded-lg hover:bg-slate-600 transition-colors">
+                        Dapatkan Akses Penuh
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 max-w-md mx-auto flex items-center gap-4 bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                    <h4 class="font-bold text-white">Jaminan Kepuasan 30 Hari</h4>
+                    <p class="text-sm text-slate-400">Tidak puas? Kami akan kembalikan uang Anda sepenuhnya, tanpa pertanyaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Pertanyaan yang Sering Diajukan</h2>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-slate-800/50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">Apa itu Prompt Maker?</h3>
+                    <p class="text-slate-400 mt-2">Prompt Maker adalah sebuah alat berbasis web yang membantu Anda menyusun deskripsi teks (prompt) yang detail dan terstruktur untuk digunakan pada platform generator video berbasis AI seperti Runway, Pika, atau Sora.</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">Apa beda Satu Kali Pembelian dengan Langganan?</h3>
+                    <p class="text-slate-400 mt-2">Satu Kali Pembelian berarti Anda hanya membayar sekali untuk mendapatkan akses selamanya ke fitur-fitur dalam paket tersebut. Langganan adalah model pembayaran berulang (misalnya bulanan) untuk mempertahankan akses.</p>
+                </div>
+                 <div class="bg-slate-800/50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">Apakah jaminan uang kembali benar-benar berlaku?</h3>
+                    <p class="text-slate-400 mt-2">Tentu saja. Jika Anda merasa tidak puas dengan produk kami dalam 30 hari pertama, hubungi kami dan kami akan memproses pengembalian dana 100%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            <p>&copy; 2025 Prompt Maker. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function startCountdown(elementId) {
+            const countdownElement = document.getElementById(elementId);
+            if (countdownElement) {
+                let timeInSeconds = 24 * 60 * 60;
+                const timer = setInterval(() => {
+                    if (timeInSeconds <= 0) {
+                        clearInterval(timer);
+                        countdownElement.textContent = "Penawaran Berakhir";
+                        return;
+                    }
+                    timeInSeconds--;
+                    const hours = Math.floor(timeInSeconds / 3600);
+                    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+                    const seconds = timeInSeconds % 60;
+                    countdownElement.textContent = 
+                        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }, 1000);
+            }
+        }
+        
+        startCountdown('countdown');
+        startCountdown('header-countdown');
+
+
+        // Copy Prompt Button
+        const copyButton = document.getElementById('copy-button');
+        const promptText = document.getElementById('prompt-text');
+        const copyNotification = document.getElementById('copy-notification');
+
+        if (copyButton) {
+            copyButton.addEventListener('click', () => {
+                navigator.clipboard.writeText(promptText.innerText).then(() => {
+                    copyNotification.style.opacity = 1;
+                    setTimeout(() => {
+                        copyNotification.style.opacity = 0;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Gagal menyalin prompt: ', err);
+                    alert('Gagal menyalin prompt.');
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
